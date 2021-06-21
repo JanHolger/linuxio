@@ -44,7 +44,7 @@ public class InterfaceRequest {
         bb.putShort(AddressFamily.INET.getValue());
         writeUShort(addrIn.getPort());
         bb.put(addrIn.getAddress(), 0, AddressFamily.INET.getAddressLength());
-        bb.position(36);
+        ((Buffer) bb).position(36);
         bb.put((byte) 3);
         return this;
     }
